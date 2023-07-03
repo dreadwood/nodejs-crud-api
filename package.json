@@ -11,7 +11,10 @@
   "dependencies": {
     "cross-env": "7.0.3",
     "dotenv": "16.3.1",
-    "uuid": "9.0.0"
+    "uuid": "9.0.0",
+    "webpack": "5.88.1",
+    "webpack-cli": "5.1.4",
+    "webpack-node-externals": "3.0.0"
   },
   "devDependencies": {
     "@types/node": "20.3.3",
