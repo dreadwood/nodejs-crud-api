@@ -1,7 +1,8 @@
 import { type IncomingMessage, type ServerResponse } from 'node:http'
 import { validate as uuidValidate } from 'uuid'
-import { ErrorMessages, StatusCode } from '../const'
+import { apiPrefix, ErrorMessages, StatusCode, usersPrefix } from '../const'
 import { checkRoute, normalizeUrl } from '../utils'
+import { userHandler } from './users'
 
 export const router = async (req: IncomingMessage, res: ServerResponse) => {
   if (typeof req.url !== 'string') {
@@ -42,7 +43,11 @@ export const router = async (req: IncomingMessage, res: ServerResponse) => {
   }
 
   try {
-    console.log('Handlers for endpoints will be here')
+    if (url === `${apiPrefix}/${usersPrefix}`) {
+      await userHandler(req, res)
+    } else {
+      console.log('Handler for endpoints userId will be here')
+    }
   } catch (error) {
     res.writeHead(StatusCode.INTERNAL_SERVER_ERROR, {
       'Content-Type': 'application/json',
