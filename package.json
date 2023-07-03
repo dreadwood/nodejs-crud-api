@@ -1,9 +1,11 @@
 {
   "name": "nodejs-crud-api",
-  "description": "simple CRUD API using in-memory database underneath and Node.js APIs.",
-  "main": "src/index.js",
+  "description": "Simple CRUD API using in-memory database underneath and Node.js APIs.",
+  "main": "src/index.ts",
   "type": "module",
   "scripts": {
+    "start:dev": "nodemon -r dotenv/config src/index.ts",
+    "start:prod": "webpack && node -r dotenv/config dist/main.cjs",
     "eslint": "eslint --ext .ts src/",
     "eslint:fix": "npm run eslint -- --fix"
   },
