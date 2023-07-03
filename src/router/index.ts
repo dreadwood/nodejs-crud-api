@@ -3,6 +3,7 @@ import { validate as uuidValidate } from 'uuid'
 import { apiPrefix, ErrorMessages, StatusCode, usersPrefix } from '../const'
 import { checkRoute, normalizeUrl } from '../utils'
 import { userHandler } from './users'
+import { userIdHandler } from './user-id'
 
 export const router = async (req: IncomingMessage, res: ServerResponse) => {
   if (typeof req.url !== 'string') {
@@ -46,7 +47,7 @@ export const router = async (req: IncomingMessage, res: ServerResponse) => {
     if (url === `${apiPrefix}/${usersPrefix}`) {
       await userHandler(req, res)
     } else {
-      console.log('Handler for endpoints userId will be here')
+      await userIdHandler(req, res, userId)
     }
   } catch (error) {
     res.writeHead(StatusCode.INTERNAL_SERVER_ERROR, {

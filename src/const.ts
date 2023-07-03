@@ -2,6 +2,7 @@ export const defaultPort = 4000
 export const apiPrefix = 'api'
 export const usersPrefix = 'users'
 export const serverListenMessage = 'Server is running and listening on port'
+export const deleteMessage = 'The user has been deleted. UserId'
 
 export enum StatusCode {
   OK = 200,
