@@ -4,14 +4,10 @@
   "main": "src/index.js",
   "type": "module",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "eslint": "eslint --ext .ts src/",
+    "eslint:fix": "npm run eslint -- --fix"
   },
   "author": "dreadwood",
-  "prettier": {
-    "semi": false,
-    "singleQuote": true,
-    "arrowParens": "avoid"
-  },
   "dependencies": {
     "cross-env": "7.0.3",
     "dotenv": "16.3.1",
