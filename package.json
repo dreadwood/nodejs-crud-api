@@ -1,0 +1,15 @@
+{
+  "name": "nodejs-crud-api",
+  "description": "simple CRUD API using in-memory database underneath and Node.js APIs.",
+  "main": "src/index.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "dreadwood",
+  "prettier": {
+    "semi": false,
+    "singleQuote": true,
+    "arrowParens": "avoid"
+  }
+}
